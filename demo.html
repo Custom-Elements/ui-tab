@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ui-tab</title>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <link rel="import" href="node_modules/polymer/polymer.html">
+    <link rel="import" href="src/ui-tab.html">
+    <style>
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Arial;
+      }
+      ui-tabs {
+        width: 26em;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <ui-tabs>
+      <ui-tab>
+        <span>Making Money</span>
+      </ui-tab>
+      <ui-tab>
+        <span>Saving Money</span>
+      </ui-tab>
+      <ui-tab>
+        <spane>Other</span>
+      </ui-tab>
+    </ui-tabs>
+    <script>
+      document.addEventListener('polymer-ready', function() {
+        //poke your element here
+      })
+    </script>
+  </body>
+</html>

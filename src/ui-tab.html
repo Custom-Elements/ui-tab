@@ -1,0 +1,18 @@
+<polymer-element name="ui-tab" attributes="value" flex auto vertical layout >
+<template>
+  <link rel="stylesheet" type="text/css" href="./ui-tab.less">
+  <div class="tab-content" flex auto center-center horizontal layout on-click="{{click}}"><content></content></div>
+</template>
+<script src="./ui-tab.litcoffee"></script>
+</polymer-element>
+
+
+<polymer-element name="ui-tabs" attributes="">
+<template>
+  <link rel="stylesheet" type="text/css" href="./ui-tab.less">
+  <div class="tab-frame" flex auto center-center horizontal layout on-change="{{change}}">
+    <content></content>
+  </div>
+</template>
+<script src="./ui-tabs.litcoffee"></script>
+</polymer-element>

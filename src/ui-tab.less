@@ -1,0 +1,27 @@
+@import "../node_modules/ui-styles/variables";
+@import "../node_modules/ui-styles/visual-elements";
+
+:host {
+  display: block;
+
+  .tab-frame {
+    margin: 0;
+    padding: 0;
+    .border;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .tab-content {
+    overflow: hidden;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: @pad @pad;
+    .flat;
+    .border;
+    border-right: 0;
+    cursor: pointer;
+  }
+}
