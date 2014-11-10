@@ -9,18 +9,32 @@ animations to look cool.
 ##Events
 
 ###change
-Fires when a different tab is active.
+Fires when a different tab is active, bubbles up from `ui-tab`.
 
 ##Attributes and Change Handlers
+###value
+This reflects the current value of the current active tab. And -- you
+can set it to switch active tab, which lets you data bind here. Woot!
+
+      valueChanged: ->
+        for tab in @querySelectorAll('ui-tab')
+          if tab.value is @value
+            tab.setAttribute 'active', ''
+          else
+            tab.removeAttribute 'active'
 
 ##Methods
 
 ##Event Handlers
+###change
+Catch a change firing up from a contained tab and maintain the
+tab like property of only one active tab at a time.
 
       change: (evt) ->
         for tab in @querySelectorAll('ui-tab')
           if tab is evt.srcElement
             tab.setAttribute 'active', ''
+            @value = tab.value
           else
             tab.removeAttribute 'active'
 
@@ -35,3 +49,7 @@ Fires when a different tab is active.
       domReady: ->
 
       detached: ->
+
+      publish:
+        value:
+          reflect: true

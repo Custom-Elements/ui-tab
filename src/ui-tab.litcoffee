@@ -12,12 +12,16 @@ Any old thing you like that will serve as a key or lookup to
 use your tab in an app. Fired along with `change` event when a
 different tab is selected.
 
+###active
+This is the tab among its peers that is selected.
+
 ##Methods
 
 ##Event Handlers
 
       click: ->
-        @fire 'change', @value
+        if not @hasAttribute 'active'
+          @fire 'change', @value
 
 ##Polymer Lifecycle
 

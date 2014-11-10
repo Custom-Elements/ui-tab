@@ -1,7 +1,13 @@
-<polymer-element name="ui-tab" attributes="value" flex auto vertical layout >
+<polymer-element name="ui-tab" attributes="value active" flex auto vertical layout >
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-tab.less">
-  <div class="tab-content" flex auto center-center horizontal layout on-click="{{click}}"><content></content></div>
+  <div id="tab-content" flex auto center-center horizontal layout on-click="{{click}}">
+    <content></content>
+  </div>
+  <div id="tab-background" full background>
+    <div id="background-inactive" full background flat></div>
+    <div id="background-active" full background transparent></div>
+  </div>
 </template>
 <script src="./ui-tab.litcoffee"></script>
 </polymer-element>
@@ -10,7 +16,7 @@
 <polymer-element name="ui-tabs" attributes="">
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-tab.less">
-  <div class="tab-frame" flex auto center-center horizontal layout on-change="{{change}}">
+  <div id="tab-frame" flex auto center-center horizontal layout on-change="{{change}}">
     <content></content>
   </div>
 </template>

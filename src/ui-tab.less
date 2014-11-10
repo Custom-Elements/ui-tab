@@ -2,9 +2,11 @@
 @import "../node_modules/ui-styles/visual-elements";
 
 :host {
-  display: block;
+  display: inline-block;
+  position: relative;
+  .cannot-select-text;
 
-  .tab-frame {
+  #tab-frame {
     margin: 0;
     padding: 0;
     .border;
@@ -13,15 +15,45 @@
     border-bottom: 0;
   }
 
-  .tab-content {
+  #tab-content {
     overflow: hidden;
     border: none;
     outline: none;
     margin: 0;
     padding: @pad @pad;
-    .flat;
-    .border;
-    border-right: 0;
     cursor: pointer;
+    .transition(@transition);
+  }
+
+  #tab-background {
+    #background-active {
+      .transition(@transition);
+      .backface-visibility(hidden);
+      .border;
+      border-right: 0;
+      border-bottom: 0;
+      .active-border;
+      .transform(rotateX(180deg));
+    }
+    #background-inactive {
+      .transition(@transition);
+      .backface-visibility(hidden);
+      .border;
+      border-right: 0;
+    }
+  }
+
+}
+
+:host([active]) {
+  #tab-background {
+    #background-active {
+      .transform(rotateX(0deg));
+    }
+    #background-inactive {
+      .transform(rotateX(180deg));
+    }
+  }
+  #tab-content {
   }
 }
