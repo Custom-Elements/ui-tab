@@ -1,10 +1,10 @@
-<polymer-element name="ui-tab" attributes="value active" flex auto vertical layout >
+<polymer-element name="ui-tab" attributes="value active" flex layout>
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-tab.less">
-  <div id="tab-content" flex auto center-center horizontal layout on-click="{{click}}">
+  <div id="tab-content" flex auto center-center vertical layout on-click="{{click}}">
     <content></content>
   </div>
-  <div id="tab-background" full background>
+  <div id="tab-background" full background >
     <div id="background-inactive" full background flat></div>
     <div id="background-active" full background transparent></div>
   </div>
